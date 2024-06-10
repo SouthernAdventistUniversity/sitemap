@@ -33,7 +33,8 @@
                     }
 
                     #content {
-                        margin: 0 auto;
+                        margin-block: 3rem;
+                        margin-inline: auto;
                         max-width: 1000px;
                     }
 
@@ -60,9 +61,9 @@
                         text-decoration: none;
                     }
 
-                    a:visited {
-                        color: #777;
-                    }
+                    /* a:visited { */
+                    /*     color: #777; */
+                    /* } */
 
                     a:hover {
                         text-decoration: underline;
@@ -70,6 +71,8 @@
 
                     td {
                         font-size: .9em;
+                        min-width: 115px;
+                        padding-block: .25rem;
                     }
 
                     th {
