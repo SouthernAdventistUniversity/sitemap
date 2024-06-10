@@ -1,4 +1,6 @@
-![Easily generate XML sitemaps for your static files](https://repository-images.githubusercontent.com/2071222/109018c6-f441-4641-a4dc-c8e9f7e894ec)
+# SAU Notes
+
+Placed under `apps/sitemap/` and the two sitemap scripts are linked from [sitemap index](https://www.southern.edu/sitemap.xml).
 
 # XML Sitemap PHP Script
 
