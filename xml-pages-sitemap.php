@@ -117,27 +117,12 @@ class Joost_XML_Sitemap_PHP {
 
 		while ( false !== ( $file = readdir( $handle ) ) ) {
 			// Check if this file needs to be ignored, if so, skip it.
-			// if ( in_array( utf8_encode( $file ), $this->ignore ) ) {
-			// 	continue;
-			// }
-      // $ignore_found = false;
-      // foreach($this->ignore as $v) {
       $paths_string = '#' . implode('|', $this->ignore) . '#';
       $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
-      echo $utf8_file . ' - ' . $paths_string . '<br>';
-      // if (preg_match('~'.$v.'~', $utf8_file)) {
-      if (preg_match($paths_string, $utf8_file)) {
-        echo $utf8_file.' matched<br>';
-        // $ignore_found = true;
-        // break;
+      if (preg_match($paths_string, $utf8_file, $out)) {
+        echo $utf8_file.' matched ' . $out . '<br>';
         continue;
       }
-      // }
-      //
-      // if ($ignore_found == true) {
-      //   echo "ignore found<br>";
-      //   continue;
-      // }
 
 			if ( $this->recursive && is_dir( $dir . $file ) ) {
 				$this->parse_dir( $dir . $file . '/', $url . $file . '/' );
