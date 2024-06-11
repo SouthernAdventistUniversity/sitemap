@@ -123,6 +123,7 @@ class Joost_XML_Sitemap_PHP {
       $ignore_found = false;
       foreach($this->ignore AS $v) {
         $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
+        $output = $utf8_file . ' - ' . $v;
         if (preg_match('~'.$v.'~', $utf8_file)) {
             // echo $v.' matched'; break;
           $ignore_found = true;
