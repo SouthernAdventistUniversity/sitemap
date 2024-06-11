@@ -56,7 +56,9 @@ class Joost_XML_Sitemap_PHP {
 	/**
 	 * URLs we replace with something else.
 	 */
-	private array $replacements;
+  private array $replacements;
+
+  private string $debug_output = '';
 
 	/**
 	 * Generates our XML sitemap.
@@ -92,7 +94,7 @@ class Joost_XML_Sitemap_PHP {
 		$this->priority     = (float) $config['priority'];
 		$this->recursive    = (bool) $config['recursive'];
 		$this->replacements = (array) $config['replacements'];
-		$this->xsl          = (string) $config['xsl'];
+    $this->xsl          = (string) $config['xsl'];
 	}
 
 	/**
@@ -120,7 +122,7 @@ class Joost_XML_Sitemap_PHP {
       $paths_string = '#' . implode('|', $this->ignore) . '#';
       $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
       if (preg_match($paths_string, $utf8_file, $out)) {
-        echo '<p>' . $utf8_file.' matched ' . $out . '</p><br>';
+        $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p><br>';
         continue;
       }
 
@@ -179,6 +181,7 @@ class Joost_XML_Sitemap_PHP {
 			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
 		}
 		echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+    echo $this->debug_output;
 		echo $this->output;
 		echo '</urlset>' . PHP_EOL;
 	}
