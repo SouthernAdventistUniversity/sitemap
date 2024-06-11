@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+
 /**
  * XML Sitemap PHP Script
  * For more info, see: https://github.com/jdevalk/XML-Sitemap-PHP-Script
