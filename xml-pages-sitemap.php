@@ -174,16 +174,16 @@ class Joost_XML_Sitemap_PHP {
 	 */
 	private function output(): void {
 		// Sent the correct header so browsers display properly, with or without XSL.
-		header( 'Content-Type: application/html' );
+		header( 'Content-Type: application/xml' );
 
-    echo $this->debug_output;
-		/*echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
-		if ( ! empty( $this->xsl ) ) {
+		echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
+		/*if ( ! empty( $this->xsl ) ) {
 			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
-    }
-		echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+    }*/
+    echo $this->debug_output;
+		/* echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 		echo $this->output;
-    echo '</urlset>' . PHP_EOL;*/
+		echo '</urlset>' . PHP_EOL; */
 	}
 }
 
