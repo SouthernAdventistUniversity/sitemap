@@ -6,7 +6,7 @@
     <xsl:template match="/">
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <title>XML Sitemap</title>
+                <title>Sitemap</title>
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
                 <style type="text/css">
                     body {
