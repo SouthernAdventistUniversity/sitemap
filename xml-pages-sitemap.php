@@ -94,7 +94,7 @@ class Joost_XML_Sitemap_PHP
     $this->path         = (string) $config['directory'];
     $this->url          = (string) $config['directory_url'];
     $this->filetypes    = (array) $config['filetypes'];
-    $this->ignore       = array_merge($config['ignore'], ['(\.)', '(\.\.)', 'xml-sitemap\.php']);
+    $this->ignore       = array_merge($config['ignore'], ['^\.$', '^\.\.$', 'xml-sitemap\.php']);
     $this->priority     = (float) $config['priority'];
     $this->recursive    = (bool) $config['recursive'];
     $this->replacements = (array) $config['replacements'];
