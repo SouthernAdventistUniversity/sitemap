@@ -120,13 +120,16 @@ class Joost_XML_Sitemap_PHP {
 			// if ( in_array( utf8_encode( $file ), $this->ignore ) ) {
 			// 	continue;
 			// }
-
+      $ignore_found = false;
       foreach($this->ignore AS $v) {
         $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
         if (preg_match('~'.$v.'~', $utf8_file)) {
             // echo $v.' matched'; break;
-          continue;
+          $ignore_found = true;
         }
+      }
+      if ($ignore_found == true) {
+        continue;
       }
 
 			if ( $this->recursive && is_dir( $dir . $file ) ) {
