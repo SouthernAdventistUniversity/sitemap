@@ -1,6 +1,8 @@
 # SAU Notes
 
-Placed under `apps/sitemap/` and the two sitemap scripts are linked from [sitemap index](https://www.southern.edu/sitemap.xml).
+Forked from jdevalk and modified to use regex strings in the `ignore` ini array. This allows us to much more easily ignore temporary or in progress files like "index-1.html"
+
+Placed under `apps/sitemap/`, at the moment `https://www.southern.edu/sitemap.xml` is redirecting to the `xml-pages-sitemap.php` script.
 
 # XML Sitemap PHP Script
 
