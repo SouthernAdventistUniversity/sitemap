@@ -90,7 +90,7 @@ class Joost_XML_Sitemap_PHP {
 		$this->path         = (string) $config['directory'];
 		$this->url          = (string) $config['directory_url'];
 		$this->filetypes    = (array) $config['filetypes'];
-		$this->ignore       = array_merge( $config['ignore'], [ '.', '..', 'xml-sitemap.php' ] );
+		$this->ignore       = array_merge( $config['ignore'], [ '\.', '\.\.', 'xml-sitemap\.php' ] );
 		$this->priority     = (float) $config['priority'];
 		$this->recursive    = (bool) $config['recursive'];
 		$this->replacements = (array) $config['replacements'];
@@ -116,10 +116,11 @@ class Joost_XML_Sitemap_PHP {
 	 */
 	private function parse_dir( string $dir, string $url ): void {
 		$handle = opendir( $dir );
+    $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
+    $this->debug_output .= $paths_string . PHP_EOL;
 
 		while ( false !== ( $file = readdir( $handle ) ) ) {
 			// Check if this file needs to be ignored, if so, skip it.
-      $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
       $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
       if (preg_match($paths_string, $utf8_file, $out)) {
         $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p><br>' . PHP_EOL;
