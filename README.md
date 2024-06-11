@@ -6,7 +6,7 @@ Cloned under `apps/sitemap/`. Currently, `https://www.southern.edu/sitemap.xml` 
 
 ## Editing
 1. Clone and make updates to this repository.
-2. On PROD, run `/var/www/www.southern.edu/apps/sitemap` and run `sudo git pull`.
+2. On PROD, run `cd /var/www/www.southern.edu/apps/sitemap` and run `sudo git pull`.
 
 # XML Sitemap PHP Script
 
