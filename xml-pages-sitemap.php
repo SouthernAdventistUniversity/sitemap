@@ -58,7 +58,7 @@ class Joost_XML_Sitemap_PHP {
 	 */
   private array $replacements;
 
-  private string $debug_output = '';
+  private string $debug_output = '<document>';
 
 	/**
 	 * Generates our XML sitemap.
@@ -180,9 +180,8 @@ class Joost_XML_Sitemap_PHP {
 		/*if ( ! empty( $this->xsl ) ) {
 			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
     }*/
-    $this->debug_output .= "<document>";
-    echo $this->debug_output;
     $this->debug_output .= "</document>";
+    echo $this->debug_output;
 		/* echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 		echo $this->output;
 		echo '</urlset>' . PHP_EOL; */
