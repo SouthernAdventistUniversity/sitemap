@@ -1,7 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+// error_reporting(E_ALL);
+// ini_set('display_errors', 'on');
 
 /**
  * XML Sitemap PHP Script
@@ -132,7 +132,6 @@ class Joost_XML_Sitemap_PHP
 
       foreach ($this->ignore as $v) {
         if (preg_match('~' . $v . '~', $utf8_file, $out)) {
-          // echo '<p>' . $v . ' matched this part of $url: ' . $utf8_file . ' ---- ' . $out[0] . '</p><hr>'. PHP_EOL;
           $ignored = true;
         }
       }
