@@ -177,9 +177,9 @@ class Joost_XML_Sitemap_PHP {
 		header( 'Content-Type: application/xml' );
 
 		echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
-		if ( ! empty( $this->xsl ) ) {
+		/*if ( ! empty( $this->xsl ) ) {
 			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
-		}
+    }*/
 		echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
     echo $this->debug_output;
 		echo $this->output;
