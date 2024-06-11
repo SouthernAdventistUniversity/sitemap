@@ -121,10 +121,12 @@ class Joost_XML_Sitemap_PHP {
 			// Check if this file needs to be ignored, if so, skip it.
       $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
       $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
+      $this->debug_output .= "<document>";
       if (preg_match($paths_string, $utf8_file, $out)) {
         $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p><br>' . PHP_EOL;
         continue;
       }
+      $this->debug_output .= "</document>";
 
 			if ( $this->recursive && is_dir( $dir . $file ) ) {
 				$this->parse_dir( $dir . $file . '/', $url . $file . '/' );
