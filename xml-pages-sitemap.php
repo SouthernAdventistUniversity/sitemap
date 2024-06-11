@@ -122,7 +122,7 @@ class Joost_XML_Sitemap_PHP {
       $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
       $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
       if (preg_match($paths_string, $utf8_file, $out)) {
-        $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p>';
+        $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p><br>' . PHP_EOL;
         continue;
       }
 
