@@ -192,8 +192,9 @@ class Joost_XML_Sitemap_PHP
     if ( ! empty( $this->xsl ) ) {
 			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
     }
-		// echo $this->output;
-		// echo '</urlset>' . PHP_EOL;
+		echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+		echo $this->output;
+		echo '</urlset>' . PHP_EOL;
   }
 }
 
