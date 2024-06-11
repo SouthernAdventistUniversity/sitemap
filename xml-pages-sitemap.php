@@ -122,8 +122,8 @@ class Joost_XML_Sitemap_PHP
   private function parse_dir(string $dir, string $url): void
   {
     $handle = opendir($dir);
-    $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
-    $this->debug_output .= $paths_string . PHP_EOL;
+    // $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
+    // $this->debug_output .= $paths_string . PHP_EOL;
 
     while (false !== ($file = readdir($handle))) {
       // Check if this file needs to be ignored, if so, skip it.
