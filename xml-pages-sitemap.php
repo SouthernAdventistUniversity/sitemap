@@ -119,10 +119,10 @@ class Joost_XML_Sitemap_PHP {
 
 		while ( false !== ( $file = readdir( $handle ) ) ) {
 			// Check if this file needs to be ignored, if so, skip it.
-      $paths_string = '#' . implode('|', $this->ignore) . '#';
+      $paths_string = '#(' . implode(')|(', $this->ignore) . ')#';
       $utf8_file = mb_convert_encoding($file, 'UTF-8', 'ISO-8859-1');
       if (preg_match($paths_string, $utf8_file, $out)) {
-        $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p><br>';
+        $this->debug_output .= '<p>' . $utf8_file.' matched ' . $out[0] . '</p><br/>';
         continue;
       }
 
@@ -174,16 +174,16 @@ class Joost_XML_Sitemap_PHP {
 	 */
 	private function output(): void {
 		// Sent the correct header so browsers display properly, with or without XSL.
-		header( 'Content-Type: application/xml' );
+		header( 'Content-Type: application/html' );
 
-		echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
-		/*if ( ! empty( $this->xsl ) ) {
-			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
-    }*/
     echo $this->debug_output;
+		/*echo '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL;
+		if ( ! empty( $this->xsl ) ) {
+			echo '<?xml-stylesheet type="text/xsl" href="' . $this->url . $this->xsl . '"?>' . PHP_EOL;
+    }
 		echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 		echo $this->output;
-		echo '</urlset>' . PHP_EOL;
+    echo '</urlset>' . PHP_EOL;*/
 	}
 }
 
