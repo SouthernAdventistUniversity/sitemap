@@ -2,7 +2,11 @@
 
 Forked from jdevalk and modified to use regex strings in the `ignore` ini array. This allows us to much more easily ignore temporary or in progress files like "index-1.html"
 
-Placed under `apps/sitemap/`, at the moment `https://www.southern.edu/sitemap.xml` is redirecting to the `xml-pages-sitemap.php` script.
+Cloned under `apps/sitemap/`. Currently, `https://www.southern.edu/sitemap.xml` is redirecting to the `xml-pages-sitemap.php` script.
+
+## Editing
+1. Clone and make updates to this repository.
+2. On PROD, run `/var/www/www.southern.edu/apps/sitemap` and run `sudo git pull`.
 
 # XML Sitemap PHP Script
 
