@@ -4,7 +4,12 @@ Forked from jdevalk and modified to use regex strings in the `ignore` ini array.
 
 Cloned under `apps/sitemap/`. Currently, `https://www.southern.edu/sitemap.xml` is redirecting to the `xml-pages-sitemap.php` script which is run on every request.
 
-A future task could be to cache the XML created by the script once a day.
+A future task could be to cache the XML created by the script once a day. Below is an attempt that wasn't finished:
+```bash
+#!/bin/sh
+
+/usr/bin/php /var/www/www.southern.edu/public_html/apps/sitemap/xml-pages-sitemap.php > /var/www/www.southern.edu/public_html/apps/sitemap/sitemap-pages.xml
+```
 
 ## Editing
 1. Clone and make updates to this repository.
